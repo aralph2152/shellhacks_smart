@@ -3,8 +3,8 @@
 import streamlit as st
 
 def app():
-    st.write("<h1 style='font-weight: bold;'>Welcome to <span style='font-style: italic; "
-             "color: olive;'>$mart.</span></h1>", unsafe_allow_html=True)
+    st.write("<h1 style='font-weight: bold; font-style: italic;'><span style='color: white;'"
+             ">Welcome to </span> <span style='color: olive;'>$mart.</span></h1>", unsafe_allow_html=True)
     st.markdown("### *Start taking your first steps towards financial freedom.*")
     st.divider()
 
