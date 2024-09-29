@@ -4,12 +4,15 @@ import plotly.graph_objects as go
 def app():
     st.write("<h1 style='font-weight: bold; font-style: italic;'><span style='color: white;'"
              ">Budgeting</span> <span style='color: olive;'>Tool</span></h1>", unsafe_allow_html=True)
+    st.markdown("#### *Try out a new budget and help visualize where your money goes with the budgeting tool*")
+    st.divider()
+
     st.write("""
     Budgeting is a powerful tool that allows you to plan your finances according to your unique needs and goals.
     A popular budgeting framework is the **50/30/20 rule**, where:
-    - **50%** of your income goes towards *Needs* (e.g., rent, groceries, bills),
-    - **30%** is allocated to *Wants* (e.g., entertainment, dining out), and
-    - **20%** goes towards *Financial Freedom* (e.g., savings, paying off debt).
+    ✦ **50%** of your income goes towards *Needs* (e.g., rent, groceries, bills),
+    ✦ **30%** is allocated to *Wants* (e.g., entertainment, dining out), and
+    ✦ **20%** goes towards *Financial Freedom* (e.g., savings, paying off debt).
     """)
 
     # user input

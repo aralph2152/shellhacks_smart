@@ -4,14 +4,14 @@ import streamlit as st
 
 def app():
     st.write("<h1 style='font-weight: bold; font-style: italic;'><span style='color: white;'"
-             ">Welcome to </span> <span style='color: olive;'>$mart.</span></h1>", unsafe_allow_html=True)
+             ">Welcome to </span> <span style='color: olive;'>get$mart.</span></h1>", unsafe_allow_html=True)
     st.markdown("### *Start taking your first steps towards financial freedom.*")
     st.divider()
 
     # why $mart
 
-    st.markdown("#### ***Why $mart?***")
-    st.write("$mart helps you better understand your level of financial literacy, which allows you to make "
+    st.markdown("#### ***Why get$mart?***")
+    st.write("get$mart helps you better understand your level of financial literacy, which allows you to make "
              "better decisions, save more efficiently, and achieve financial freedom faster than ever before! ")
     st.divider()
 
@@ -153,9 +153,9 @@ def app():
     st.write("Progressing towards a more secure financial future can be intimidating,  "
              "but taking small steps towards your goals can make a big difference! "
              "Use the navigation bar on the left to access $mart features.")
-    st.write("✦  Understand financial terminology by playing a round of $mart quiz bowl")
-    st.write("✦  Create a savings goal using the $mart goal guide")
-    st.write("✦  Outline a new budget with the $mart budgeting tool")
-    st.write("✦  Try out the $mart motivation board to keep yourself accountable")
-    st.write("✦  Check out our $mart resources to learn more")
+    st.write("✦  Understand financial terminology by playing a round of get$mart quiz bowl")
+    st.write("✦  Create a savings goal using the get$mart goal guide")
+    st.write("✦  Outline a new budget with the get$mart budgeting tool")
+    st.write("✦  Try out the get$mart motivation board to keep yourself accountable")
+    st.write("✦  Check out our get$mart resources to learn more")
     st.divider()
