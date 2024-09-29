@@ -4,8 +4,8 @@ import streamlit as st
 import random
 
 def app():
-    st.write("<h1 style='font-weight: bold; font-style: italic;'><span style='color: white;'"
-             ">Motivation</span> <span style='color: olive;'>Board</span></h1>", unsafe_allow_html=True)
+    st.write("<h1 style='font-weight: bold; font-style: italic;'><span style='color: #F4FADA;'"
+             ">Motivation</span> <span style='color: #919A67;'>Board</span></h1>", unsafe_allow_html=True)
     st.markdown("#### *Feeling like you need a little motivation? Let one of our inspirational quotes guide your day.*")
     st.divider()
 
@@ -66,4 +66,5 @@ def app():
 
     if st.button("Generate a Quote"):
         quote = random.choice(quotes)
-        st.markdown(f"<h3 style='color:olive; font-style:italic;'>{quote}</h3>", unsafe_allow_html=True)
+        st.markdown(f"<h3 style='color:#919A67; font-style:italic;'>{quote}</h3>", unsafe_allow_html = True)
+    st.divider()

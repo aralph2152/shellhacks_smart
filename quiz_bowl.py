@@ -2,8 +2,8 @@ import streamlit as st
 import random
 
 def app():
-    st.write("<h1 style='font-weight: bold; font-style: italic;'><span style='color: white;'"
-             ">Quiz</span> <span style='color: olive;'>Bowl</span></h1>", unsafe_allow_html=True)
+    st.write("<h1 style='font-weight: bold; font-style: italic;'><span style='color: #F4FADA;'"
+             ">Quiz</span> <span style='color: #919A67;'>Bowl</span></h1>", unsafe_allow_html = True)
 
     questions = [
         {"question": "Compound interest can help grow your savings faster than simple interest.", "answer": True},
@@ -51,8 +51,8 @@ def app():
         st.session_state.user_answers = {idx: None for idx in range(7)}
         st.session_state.submit = False
 
-    st.markdown("#### *Welcome to the financial literacy quiz bowl! "
-                "You will be given 7 questions - show us how well you know your finances!*")
+    st.markdown("#### *Play a round of the financial literacy quiz bowl! "
+                "You will be given seven questions - show us how well you know your finances!*")
     st.divider()
 
     # iterate through the selected questions
@@ -61,13 +61,13 @@ def app():
         # Use radio button to select answers
         st.session_state.user_answers[idx] = st.radio(
             q["question"],
-            options=["True", "False"],
-            index=None if st.session_state.user_answers[idx] is None else ["True", "False"].index(st.session_state.user_answers[idx])
+            options = ["True", "False"],
+            index = None if st.session_state.user_answers[idx] is None else ["True", "False"].index(st.session_state.user_answers[idx])
         )
 
     # submit button to calculate results
 
-    if st.button("Submit Quiz"):
+    if st.button("Submit"):
         st.session_state.submit = True
         st.session_state.correct = 0
 
@@ -79,12 +79,14 @@ def app():
     # display results
 
     if st.session_state.submit:
+        st.divider()
         percentage = (st.session_state.correct / len(st.session_state.selected_questions)) * 100
-        st.write(f"You got {st.session_state.correct} questions correct out of "
-                 f"{len(st.session_state.selected_questions)}! That is {percentage:.2f}%.")
+        st.markdown(f"#### You got {st.session_state.correct} questions correct out of "
+                    f"{len(st.session_state.selected_questions)}! That is a {percentage:.2f}%.")
 
         # reset button to play again
 
         if st.button("Play Again"):
+
             st.session_state.clear()
             st.rerun()
