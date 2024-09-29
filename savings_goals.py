@@ -21,32 +21,33 @@ def app():
         elif freq == 'Monthly':
             return total_cost / (time_remaining / 30)  # Approximate months
 
-    st.write("<h1 style='font-weight: bold; font-style: italic;'><span style='color: white;'"
-             ">Savings</span> <span style='color: olive;'>Goals</span></h1>", unsafe_allow_html=True)
+    st.write("<h1 style='font-weight: bold; font-style: italic;'><span style='color: #F4FADA;'"
+             ">Savings</span> <span style='color: #919A67;'>Goals</span></h1>", unsafe_allow_html = True)
     st.markdown("#### *Use this tool to set your savings goals and determine how "
                 "much you need to save regularly in order to reach them by your desired date.*")
     st.divider()
 
     # Input fields
     item_name = st.text_input("What are you saving for?")
-    goal_cost = st.number_input("Total cost of the item ($):", min_value=0.0, format="%.2f")
-    target_date = st.date_input("By when do you want to reach your goal?", value=datetime.now())
+    goal_cost = st.number_input("Total cost of the item ($):", min_value = 0.0, format = "%.2f")
+    target_date = st.date_input("By when do you want to reach your goal?", value = datetime.now())
     freq = st.selectbox("Choose how often you want to see your savings plan:", ('Daily', 'Weekly', 'Monthly'))
 
     # Calculate savings plan
-    if st.button("Calculate Savings Plan"):
+    if st.button("Calculate Savings Goal"):
+        st.divider()
         total_cost = goal_cost
-        target_date_str = target_date.strftime("%B %d, %Y")  # Format the date as "Month Day, Year"
-        target_date_iso = target_date.strftime("%Y-%m-%d")  # ISO format for calculations
+        target_date_str = target_date.strftime("%B %d, %Y")
+        target_date_iso = target_date.strftime("%Y-%m-%d")
         required_savings = calculate_savings(total_cost, target_date_iso, freq)
 
         if required_savings is not None:
             st.write(
-                f"You need to save ${required_savings:.2f} {freq.lower()} to reach your goal by {target_date_str}.")
+                f"#### You need to save ${required_savings:.2f} {freq.lower()} in order to reach your goal by {target_date_str}.")
         else:
             st.write("The target date has already passed. Please choose a future date.")
 
-    # Reminder and reset
-    st.write("Set realistic savings goals! Adjust your inputs and reset if needed.")
-    if st.button("Reset Tool"):
-        st.rerun()
+        st.write("✦ Be sure to set realistic savings goals! The best way to make sure that your goals "
+                "are met is to make them achievable. Feel free to adjust your inputs and reset as needed!")
+        if st.button("Reset"):
+            st.rerun()

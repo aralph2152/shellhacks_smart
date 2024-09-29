@@ -13,7 +13,7 @@ import resources
 st.sidebar.title("Where to?")
 menu = st.sidebar.radio(
     "Take me to...",
-    ("$mart",
+    ("get$mart",
      "Quiz Bowl",
      "Savings Goals",
      "Budgeting Tool",
@@ -28,7 +28,7 @@ def get_page():
         return query['page'][0]
     return None
 
-if menu == "$mart":
+if menu == "get$mart":
     home.app()
 elif menu == "Quiz Bowl":
     quiz_bowl.app()
