@@ -28,14 +28,14 @@ def app():
     q1 = st.radio(
         "Suppose you have $100 in a savings account earning 2 percent interest "
         "a year. After five years, how much would you have?",
-        options = ["More than \$102",
-                 "Exactly \$102",
-                 "Less than \$102",
+        options = ["More than $102",
+                 "Exactly $102",
+                 "Less than $102",
                  "I don't know"
                  ],
         index = None
     )
-    if q1 == "More than \$102":
+    if q1 == "More than $102":
         st.session_state.correct += 1
 
     q2 = st.radio(
